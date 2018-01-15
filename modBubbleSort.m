@@ -1,20 +1,21 @@
-function [totalSwaps] = modBubbleSort(x)
+function [iterations] = modBubbleSort(x)
     %x = input(prompt);
     index = length(x);
-    totalSwaps = 0
+    iterations = 0;
+    sorted = true;
     for i = 1:index
-        for j = 1:index
-            swaps = 0;
-            if x(j) < x(i)
+        sorted = true;
+        for j = i:index-1
+            if x(j) > x(j+1)
                 temp = x(j);
-                x(j) = x(i);
-                x(i) = temp;
-                swaps = swaps + 1;
-                totalSwaps = totalSwaps + 1;
+                x(j) = x(j+1);
+                x(j+1) = temp;
+                sorted = false; 
             end
+            iterations = iterations + 1;
         end
-        if swaps == 0
-            return;
+        if sorted
+          return;
         end
     end
 end
