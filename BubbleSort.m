@@ -1,24 +1,22 @@
+
 %implementation and analysis of classical and modified bubble sort
 %algorithms
-function [swaps] = bubbleSort(x)
+function [iterations] = BubbleSort(x)
     %x = input(prompt);
-    swaps = 0
+    iterations = 0;
     index = length(x);
     for i = 1:index
         %swaps = 0;
-        for j = 1:index
-            if x(j) < x(i)
+        for j = i:index-1
+            if x(j) > x(j+1)
                 temp = x(j);
-                x(j) = x(i);
-                x(i) = temp;
-                swaps = swaps + 1;
-                
+                x(j) = x(j+1);
+                x(j+1) = temp;
             end
-            
+            iterations = iterations + 1;
         end
-        x
     end
+    return;
 end
-
 
 
