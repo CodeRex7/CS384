@@ -5,11 +5,11 @@ function [runningTime]=quickSort(inputArray)
   return;
  end
   
- function []=actualquickSort(arr,low,high)
+ function [arr]=actualquickSort(arr,low,high)
        if low < high
-       pi = partition(arr, low, high);
-       actualquickSort(arr, low, pi - 1); 
-       actualquickSort(arr, pi + 1, high);
+       [pi,arr] = partition(arr, low, high);
+       arr = actualquickSort(arr, low, pi - 1); 
+       arr = actualquickSort(arr, pi + 1, high);
        end
        
  end

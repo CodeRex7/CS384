@@ -1,4 +1,4 @@
-function [pivot]=partition(arr,low,high)
+function [pivot,arr]=partition(arr,low,high)
  pivot=arr(high);
  i=(low-1);
  for j=low:(high-1)
@@ -13,5 +13,6 @@ function [pivot]=partition(arr,low,high)
      arr(i+1)=arr(high);
      arr(high)=temp;
      pivot=i+1;
+     arr
      return;
  end
