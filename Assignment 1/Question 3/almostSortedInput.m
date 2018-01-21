@@ -1,8 +1,6 @@
 function [output] = almostSortedInput(input)
     start = ceil(rand(1,1)*0.15*length(input));
     stop = ceil(rand(1,1)*0.15*length(input));
-    start
-    stop
     output = actual(input,start,length(input)-stop);
     return;
 end
