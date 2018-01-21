@@ -14,7 +14,7 @@ while tossNumber != 10000
   hold on;
   headsCount = headsCount + coinToss;
   tossNumber = tossNumber + 1;
-  plot(tossNumber,headsCount/tossNumber,"color", "red", "linewidth", 3);
+  plot(tossNumber,headsCount/tossNumber,"color", "red", "linewidth", 10);
   drawnow();
   end
 prob = headsCount / (tossNumber-1);
