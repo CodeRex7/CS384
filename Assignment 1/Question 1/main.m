@@ -10,11 +10,13 @@ title("Coin Toss Simulation");
 legend('Probability');
 xlabel("Number of Tosses");
 ylabel("Probability of Heads");
-while tossNumber != 10000
+for i = 1:10
+while tossNumber != 1000
   hold on;
   headsCount = headsCount + coinToss;
   tossNumber = tossNumber + 1;
   plot(tossNumber,headsCount/tossNumber,"color", "red", "linewidth", 10);
   drawnow();
-  end
+end
+endfor
 prob = headsCount / (tossNumber-1);
