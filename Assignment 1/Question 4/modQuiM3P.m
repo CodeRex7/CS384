@@ -30,22 +30,22 @@ end
 
 function [x,pivot,iterations] = partition(x,lo,hi,iterations)
     % Median of three pivot index
-    pp = medianofthree(x,lo,hi);
+    [pp,iterations] = medianofthree(x,lo,hi,iterations);
 
     % Partition around pivot
-    x = swap(x,lo,pp);
+    [x,iterations] = swap(x,lo,pp,iterations);
     pivot = lo;
     for j = (lo + 1):hi
       iterations++;
         if (x(j) < x(lo))
             pivot = pivot + 1;
-            x = swap(x,pivot,j);
+            [x,iterations] = swap(x,pivot,j,iterations);
         end
     end
-    x = swap(x,lo,pivot);
+    [x,iterations] = swap(x,lo,pivot,iterations);
 end
 
-function pp = medianofthree(x,lo,hi)
+function [pp,iterations] = medianofthree(x,lo,hi,iterations)
     % Middle element (avoiding overflow)
     mm = lo + floor((hi - lo) / 2);
 
@@ -83,8 +83,10 @@ function [x,iterations] = insertionsorti(x,lo,hi,iterations)
   end
 end
 
-function x = swap(x,i,j)
+function [x,iterations] = swap(x,i,j,iterations)
+  %iterations++;
   val = x(i);
   x(i) = x(j);
   x(j) = val;
+  return;
 end

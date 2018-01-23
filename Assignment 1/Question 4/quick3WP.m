@@ -18,22 +18,26 @@ function [arr,iterations] = actualquick3WP(arr,lo,hi,iterations)
   while (i <= gt)
     iterations++;
      if (arr(i) < v)
-       temp = arr(lt);
-       arr(lt) = arr(i);
-       array(i) = temp;
+       [arr,iterations] = swap(arr,lt,i,iterations);
        lt = lt + 1;
        i = i + 1;
      elseif (arr(i) > v)
-       temp = arr(i);
-       arr(i) = arr(gt);
-       arr(gt) = arr(i);
+       [arr,iterations] = swap(arr,gt,i,iterations);
        gt = gt - 1;
      else
        i = i + 1;
      endif
   endwhile
   iterations++;
-  arr = actualquick3WP(arr, lo, lt-1,iterations);
-  arr = actualquick3WP(arr, gt+1, hi,iterations);
+  [arr,iterations] = actualquick3WP(arr, lo, lt-1,iterations);
+  [arr,iterations] = actualquick3WP(arr, gt+1, hi,iterations);
+  return;
+end
+
+function [x,iterations] = swap(x,i,j,iterations)
+  %iterations++;
+  val = x(i);
+  x(i) = x(j);
+  x(j) = val;
   return;
 end

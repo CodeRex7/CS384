@@ -17,20 +17,22 @@ function [x,pivot,iterations] = partition(x,lo,hi,iterations)
     pp = hi;
 
     % Partition around pivot
-    x = swap(x,lo,pp);
+    [x,iterations] = swap(x,lo,pp,iterations);
     pivot = lo;
     for j = (lo + 1):hi
       iterations++;
         if (x(j) < x(lo))
             pivot = pivot + 1;
-            x = swap(x,pivot,j);
+            [x,iterations] = swap(x,pivot,j,iterations);
         end
     end
-    x = swap(x,lo,pivot);
+    [x,iterations] = swap(x,lo,pivot,iterations);
 end
 
-function x = swap(x,i,j)
+function [x,iterations] = swap(x,i,j,iterations)
+  iterations++;
   val = x(i);
   x(i) = x(j);
   x(j) = val;
+  return;
 end
