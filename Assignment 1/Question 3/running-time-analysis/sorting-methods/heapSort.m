@@ -1,8 +1,8 @@
-function [runningTime] = heapSort(inputArray)
+function [iterations] = heapSort(inputArray)
 % Build max-heap from x
 n = length(inputArray);
 inputArray = buildmaxheap(inputArray,n);
-timeInitial = tic;
+
 
 % Heapsort
 heapsize = n;
@@ -14,7 +14,6 @@ for i = n:-1:2
     heapsize = heapsize - 1;
     inputArray = maxheapify(inputArray,1,heapsize);
 end
-runningTime = toc(timeInitial);
 return;
 end
 

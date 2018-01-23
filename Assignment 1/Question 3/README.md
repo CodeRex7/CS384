@@ -1,3 +1,13 @@
 # Question 3
+Determine the asymptotic behaviour of at least 5 internal sorting algorithms for each of the following input variations:
+1. Random data
+2. Reverse Ordered Data
+3. Almost Sorted Data
+4. Highly Repetitive Data
 
-For each of the data formats: random, reverse ordered, and nearly sorted, run your program say SORTTEST for all combinations of sorting algorithms and data sizes and complete each of the following tables.  When you have completed the tables, analyze your data and determine the asymptotic behaviour of each of the sorting algorithms for each of the data types (i) Random data, (ii) Reverse Ordered Data, (iii) Almost Sorted Data  and (iv) Highly Repetitive Data . select the suitable no of elements for the analysis that supports your program. Select at least five internal sorting algorithm to present your analysis
+Select a suitable number of elements for the analysis that supports your program.
+
+
+To run the code, all methods must be placed within the same folder. They have been sorted into different folders for sake of clarity.
+
+Note: Radix Sort has not been implemented and can be left out.
