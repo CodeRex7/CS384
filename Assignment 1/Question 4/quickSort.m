@@ -30,7 +30,7 @@ function [x,pivot,iterations] = partition(x,lo,hi,iterations)
 end
 
 function [x,iterations] = swap(x,i,j,iterations)
-  iterations++;
+  % iterations++;
   val = x(i);
   x(i) = x(j);
   x(j) = val;

@@ -6,9 +6,10 @@ function [iterations] = quickSort(inputArray)
 
  function [arr,iterations]=actualquickSort(arr,low,high,iterations)
        if low < high
-       [pi,arr,iterations] = partition(arr, low, high,iterations);
-       [arr,iterations] = actualquickSort(arr, low, pi - 1,iterations);
-       [arr,iterations] = actualquickSort(arr, pi + 1, high,iterations);
+         iterations++;
+         [pi,arr,iterations] = partition(arr, low, high,iterations);
+         [arr,iterations] = actualquickSort(arr, low, pi - 1,iterations);
+         [arr,iterations] = actualquickSort(arr, pi + 1, high,iterations);
        end
 
  end
