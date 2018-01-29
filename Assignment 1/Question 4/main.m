@@ -1,9 +1,9 @@
 %Initialising arrays
-num = zeros(1,10);
-q3WP = zeros(1,10);
-qM3P = zeros(1,10);
-mqM3P = zeros(1,10);
-qui = zeros(1,10);
+num = zeros(1,100);
+q3WP = zeros(1,100);
+qM3P = zeros(1,100);
+mqM3P = zeros(1,100);
+qui = zeros(1,100);
 
 %Averaging the data over 50 sets
 for j = 1:50
