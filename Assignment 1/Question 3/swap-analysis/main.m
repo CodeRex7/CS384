@@ -19,7 +19,7 @@ for j = 1:100
     %a = reverseSortedGen(a);
 
     %Randomised data of which subarrays are already sorted
-    %a = almostSortedInput(a);
+    a = almostSortedInput(a);
 
     num(i) = i * 10;
     hea(i) = hea(i) + heapSort(a) / 1000;
@@ -35,18 +35,18 @@ for j = 1:100
 hold on;
 h=figure(1);
 %grid on;
-title("Asymptotic Behaviour of Sorting Algorithms \n using randomized data","FontSize",18,"fontweight","normal");
-plot(num,bub,"linewidth",3);
-plot(num,sel,"linewidth",3);
-plot(num,qui,"linewidth",3);
-plot(num,ins,"linewidth",3);
-plot(num,hea,"linewidth",3);
+title("Asymptotic Behaviour of Sorting Algorithms \n using almsot sorted data","FontSize",18,"fontweight","normal");
+plot(num,bub,"linewidth",2);
+plot(num,sel,"linewidth",2);
+plot(num,qui,"linewidth",2);
+plot(num,ins,"linewidth",2);
+plot(num,hea,"linewidth",2);
 legend('Bubble','Selection','Quick','Insertion','Heap',"location", "northwest");
-xlabel("Number of Elements","FontSize",16);
-ylabel("Running Time","FontSize",16);
+xlabel("Number of Elements");
+ylabel("Number of iterations");
 h=get (gcf, "currentaxes");
-set(h,"linewidth",3);
-set(h,"fontsize",14);
+%set(h,"linewidth",3);
+%set(h,"fontsize",14);
 h=figure(1);
 hold off;
 %print -dpng -color "-S600,600" almostSorted.png
