@@ -10,4 +10,4 @@ Question 3 : Internal Sorting Analysis with different data sets
 
 Question 4 : Quick Sort Analysis
 
-Question 5 : Insertion Sort Analysis
+Question 5 : Two Way Insertion Sort Analysis
