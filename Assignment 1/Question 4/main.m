@@ -1,20 +1,20 @@
 %Initialising arrays
-num = zeros(1,100);
-q3WP = zeros(1,100);
-qM3P = zeros(1,100);
-mqM3P = zeros(1,100);
-qui = zeros(1,100);
+num = zeros(1,10);
+q3WP = zeros(1,10);
+qM3P = zeros(1,10);
+mqM3P = zeros(1,10);
+qui = zeros(1,10);
 
 %Averaging the data over 50 sets
 for j = 1:50
-  for i = 1:100
+  for i = 1:10
     %Randomised Data
     a = floor(10*i*rand(1,10*i));
     num(i) = i * 10;
-    q3WP(i) = q3WP(i) + quick3WP(a) / 5000;
-    qM3P(i) = qM3P(i) + quickM3P(a) / 5000;
-    mqM3P(i) = mqM3P(i) + modQuiM3P(a) / 5000;
-    qui(i) = qui(i) + quickSort(a) / 5000;
+    q3WP(i) = q3WP(i) + quick3WP(a) / 500;
+    qM3P(i) = qM3P(i) + quickM3P(a) / 500;
+    mqM3P(i) = mqM3P(i) + modQuiM3P(a) / 500;
+    qui(i) = qui(i) + quickSort(a) / 500;
   end
  end
 
