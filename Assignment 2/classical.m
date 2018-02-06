@@ -16,6 +16,5 @@ function [iterations] = classical(arr1,arr2)
  		endfor
  	endfor
  endfor
- c
  return;
 end

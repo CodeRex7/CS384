@@ -13,7 +13,7 @@ function [iterations,re] = actualStrassen(arr1,arr2, iterations)
 	% if n ~= 2^( log2(n) )
 	%    error('The matrix dimension must be a power of 2.')
 	% end
-	iterations++;
+	% iterations++;
 	if n <= 2
 	   re = arr1*arr2;
 	   iterations++;
