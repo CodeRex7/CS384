@@ -10,7 +10,7 @@ function [iterations] = classical(arr1,arr2)
  	for j = 1:rowNum
  		c(i,j) = 0;
  		for k = 1:n
- 			
+
  			c(i,j) = c(i,j) + arr1(i,k)*arr2(k,j);
  			iterations++;
  		endfor
