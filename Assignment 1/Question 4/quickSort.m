@@ -2,6 +2,7 @@ function iterations = quickSort(x)
     iterations = 0;
     n = length(x);
     [x,iterations] = actualquickSort(x,1,n,iterations);
+    x
 end
 
 function [x,iterations] = actualquickSort(x,lo,hi,iterations)
