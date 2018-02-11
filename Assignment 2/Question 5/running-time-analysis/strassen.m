@@ -1,6 +1,6 @@
 function [runningTime] = strassen(A,B)
   timeInit = tic();
-  [C] = strassenCompute(A,B,8);
+  [C] = strassenCompute(A,B,2);
   runningTime = toc(timeInit);
   return;
 end
@@ -19,7 +19,7 @@ function C = strassenCompute(A, B, nmin)
   %          V. Strassen, Gaussian elimination is not optimal,
   %          Numer. Math., 13 (1969), pp. 354-356.
 
-  if nargin < 3, nmin = 8;
+  if nargin < 3, nmin = 2;
   endif
 
     n = length(A);
