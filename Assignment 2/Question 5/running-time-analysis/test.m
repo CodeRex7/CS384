@@ -1,12 +1,10 @@
-% Recursive function that computes the matrix product AB using Strassen's algorithm.
-
-function [iterations] = strassen2(A,B)
-  iterations = 0;
-  [C, iterations] = actualStrassen2(A,B,iterations);
+function [ze] = test(A,B)
+  ze = 0;
+  [C,ze] = mult(A,B,ze);
   return;
 end
 
-function [C, iterations] = actualStrassen2( A, B, iterations )
+function [C,ze] = mult( A, B,ze)
   sizeN = size(A);
   sizeN = sizeN(1); % sizeN = n
 
@@ -14,7 +12,7 @@ function [C, iterations] = actualStrassen2( A, B, iterations )
   % if (A != 0 && B != 0)
     if (sizeN == 1 && A!=0 && B!=0)
       C = A(1,1) * B(1,1);
-      iterations++;
+      ze++;
     else if (A==0 || B==0)
       C = zeros(rows(A),rows(A));
     else
@@ -30,13 +28,13 @@ function [C, iterations] = actualStrassen2( A, B, iterations )
       B22 = B((sizeN+1):end, (sizeN+1):end);
 
       % Compute M1, M2, ... M7
-      [M1,iterations] = actualStrassen2(A11 + A22, B11 + B22,iterations);
-      [M2,iterations] = actualStrassen2(A21 + A22, B11,iterations);
-      [M3,iterations] = actualStrassen2(A11, B12 - B22,iterations);
-      [M4,iterations] = actualStrassen2(A22, B21 - B11,iterations);
-      [M5,iterations] = actualStrassen2(A11 + A12, B22,iterations);
-      [M6,iterations] = actualStrassen2(A21 - A11, B11 + B12,iterations);
-      [M7,iterations] = actualStrassen2(A12 - A22, B21 + B22,iterations);
+      [M1,ze] = mult(A11 + A22, B11 + B22,ze);
+      [M2,ze] = mult(A21 + A22, B11,ze);
+      [M3,ze] = mult(A11, B12 - B22,ze);
+      [M4,ze] = mult(A22, B21 - B11,ze);
+      [M5,ze] = mult(A11 + A12, B22,ze);
+      [M6,ze] = mult(A21 - A11, B11 + B12,ze);
+      [M7,ze] = mult(A12 - A22, B21 + B22,ze);
 
       % Compute C11, C12, C21, and C22
       C11 = M1 + M4 - M5 + M7;

@@ -1,8 +1,8 @@
-num = zeros(1,49);
-iterationsCl = zeros(1,49);
-iterationsSt = zeros(1,49);
+num = zeros(1,29);
+iterationsCl = zeros(1,29);
+iterationsSt = zeros(1,29);
 % for i = 1:15
-for i = 2:50
+for i = 2:30
 	inp1 = randi(i*10,i,i);
 	inp2 = randi(i*10,i,i);
 	num(i-1) = i;
@@ -14,12 +14,12 @@ for i = 2:50
 		inp2 = postpad(inp2, padlen,0,1);
 		inp2 = postpad(inp2, padlen,0,2);
 	endif
-	iterationsSt(i-1) = iterationsSt(i-1) + strassen2(inp1,inp2);
+	iterationsSt(i-1) = iterationsSt(i-1) + strassen(inp1,inp2);
 % endfor
 endfor
 
 hold on;
-title("Iterations vs Data Size");
+title("Running time vs Data Size");
 plot(num,iterationsCl,"linewidth",2);
 plot(num,iterationsSt,"linewidth",2);
 legend('Classical','Strassen','location','northwest');
