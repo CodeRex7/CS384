@@ -1,7 +1,7 @@
 num = zeros(1,29);
 iterationsCl = zeros(1,29);
 iterationsSt = zeros(1,29);
-for i = 1:15
+% for i = 1:15
 for i = 2:30
 	inp1 = randi(i*10,i,i);
 	inp2 = randi(i*10,i,i);
@@ -15,7 +15,7 @@ for i = 2:30
 		inp2 = postpad(inp2, padlen,0,2);
 	endif
 	iterationsSt(i-1) = iterationsSt(i-1) + strassen2(inp1,inp2)/15;
-endfor
+% endfor
 endfor
 
 hold on;
