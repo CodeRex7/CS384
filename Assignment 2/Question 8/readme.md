@@ -5,9 +5,10 @@ Binary Insertion Sort is a variant of Insertion Sort, in which the location to 
 
 ## Iteration Analysis
 
-From the graph we can clearly see that Binary Insertion Sort takes more iterations than standard Insertion Sort or Quick Sort. However, since the calculation of insertion index is the only subroutine being affected, the overall time complexity should not be affected in any notable way. ![Iteration Analysis Graph] (https://github.com/AB1908/CS384/blob/master/Assignment%202/Question%208/iteration-analysis/analysis.png)
+From the graph we can clearly see that Binary Insertion Sort takes more iterations than standard Insertion Sort or Quick Sort. However, since the calculation of insertion index is the only subroutine being affected, the overall time complexity should not be affected in any notable way. ![See Iteration Analysis Graph](https://github.com/AB1908/CS384/blob/master/Assignment%202/Question%208/iteration-analysis/analysis.png "Iteration Analysis Graph")
+
 
 
 ## Running Time Analysis
 
-The above assertion cannot be verified from running time analysis due to inaccuracies in measuring the running time and poor implementation of the algorithm. Another reference implementation was also not found, so further conclusions could not be drawn. ![Running Time Analysis Graph] (https://github.com/AB1908/CS384/blob/master/Assignment%202/Question%208/running-time-analysis/binaryInsertionSortRunningTime.png)
+The above assertion cannot be verified from running time analysis due to inaccuracies in measuring the running time and poor implementation of the algorithm. Another reference implementation was also not found, so further conclusions could not be drawn. ![See Iteration Analysis Graph](https://github.com/AB1908/CS384/blob/master/Assignment%202/Question%208/running-time-analysis/binaryInsertionSortRunningTime.png "Running Time Analysis Graph")
