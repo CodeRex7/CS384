@@ -4,11 +4,10 @@ function [iterations,arr] = binaryInsertionSort(arr, iterations=0)
   while (sorted != ind)
     j = sorted+1;
     % iterations++;
-    %check boundary conditions, if the element to be inserted is at the beginning or end of the trivially sorted array, else find the position from binaryFind
     [iterations,toInsert] = binaryFind(arr,1, sorted, arr(j), iterations);
-    while(j != toInsert)
-      toInsert
+    while (j > toInsert)
       iterations++;
+      % toInsert,j
       arr = swap(arr, j, --j);
     end
     sorted++;

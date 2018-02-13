@@ -8,13 +8,14 @@ ins = zeros(1,10);
 for j = 1:10
   for i = 1:10
     %Randomised Data
-    a = floor(10*i*rand(1,10*i));
+    a = floor(10*(i)*rand(1,10*(i)));
     num(i) = i * 10;
     bIS(i) = bIS(i) + binaryInsertionSort(a) / 10;
     ins(i) = ins(i) + insertionSort(a) / 10;
     qui(i) = qui(i) + quickSort(a) / 10;
   end
  end
+
 
 %Plotting details
 hold on;
