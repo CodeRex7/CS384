@@ -5,7 +5,7 @@
 function [knapsackValue] = orderingZOKnapsack(itemList, weightList, valueList, maxKnapsackWeight = 11)
   ratioList = cat(1,itemList,weightList,valueList,valueList ./ weightList);
   ratioList = transpose(ratioList);
-  ratioList = sortrows(ratioList,[-4])
+  ratioList = sortrows(ratioList,[-4]);
   [knapsack,knapsackValue] = fillKnapsack(ratioList,maxKnapsackWeight);
 end
 
