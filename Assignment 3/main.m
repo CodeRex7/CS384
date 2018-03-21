@@ -9,17 +9,17 @@ for j = 1:10
   values = randi(250,1,j*10);
   weights = randi(200,1,j*10);
 
-  for i = 1:length(a)
+  for i = 1:length(values)
     %Randomised Data
     subset(i) += subsetZOKnapsack(1:length(values), weights, values, i)/10;
     ordering(i) += orderingZOKnapsack(1:length(values), weights, values, i)/10;
   end
- end
+end
 
 %Plotting details
 hold on;
 h=figure(1);
-title("Analysis of Greedy Algorithms /nfor 0-1 Knapsack Problem","fontweight","normal");
+title("Analysis of Greedy Algorithms \nfor 0-1 Knapsack Problem","fontweight","normal");
 plot(subset,"linewidth",2);
 plot(ordering,"linewidth",2);
 legend('Subset Paradigm','Ordering Paradigm',"location", "northwest");
