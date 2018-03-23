@@ -1,13 +1,17 @@
 function [value] = bottomUpDynamic(n, k)
-  value =
-  lookupTable = [1]
+  lookupTable = TableGen([1],n,k);
+  value = lookupTable(n,k)+lookupTable(n,k+1);
 end
 
-function [lookupTable] = recursiveTableGen(lookupTable, n , k)
-  lookupTable = horzcat(lookupTable, zeros(length(lookupTable(:,1))));
-  appendRow = [1];
-  for i=1:length(lookupTable(1,:))
-    appendRow = vertcat(appendRow,[lookupTable(i-1,j-1) + lookupTable(i-1,j)];
+function [lookupTable] = TableGen(lookupTable, n , k)
+  
+  for j = 1:n+1
+      lookupTable = horzcat(lookupTable,zeros(rows(lookupTable)));
+      appendRow = [1];
+      for i=2:length(lookupTable(1,:))
+        appendRow = horzcat(appendRow,[lookupTable(j,i-1) + lookupTable(j,i)]);
+      endfor
+      lookupTable = vertcat(lookupTable, appendRow);
   endfor
-  lookupTable = vertcat;
+  return;
 end
