@@ -1,9 +1,9 @@
 function [value] = bottomUpDynamic(n, k)
-  lookupTable = TableGen([1],n,k);
+  lookupTable = tableGen([1],n,k);
   value = lookupTable(n,k)+lookupTable(n,k+1);
 end
 
-function [lookupTable] = TableGen(lookupTable, n , k)
+function [lookupTable] = tableGen(lookupTable, n , k)
 
   for j = 1:n+1
       lookupTable = horzcat(lookupTable,zeros(rows(lookupTable),1));
