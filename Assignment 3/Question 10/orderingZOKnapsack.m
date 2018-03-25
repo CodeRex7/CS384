@@ -6,10 +6,11 @@ function [knapsackValue] = orderingZOKnapsack(itemList, weightList, valueList, m
   ratioList = cat(1,itemList,weightList,valueList,valueList ./ weightList);
   ratioList = transpose(ratioList);
   ratioList = sortrows(ratioList,[-4]);
-  [knapsack,knapsackValue] = fillKnapsack(ratioList,maxKnapsackWeight);
+  [knapsack] = fillKnapsack(ratioList,maxKnapsackWeight);
+  knapsackValue = sum(knapsack(:,3));
 end
 
-function [knapsack,knapsackValue] = fillKnapsack(ratioList, maxKnapsackWeight)
+function [knapsack] = fillKnapsack(ratioList, maxKnapsackWeight)
   currentKnapsackWeight = 0;
   knapsackValue = 0;
   knapsack = [];
@@ -17,9 +18,7 @@ function [knapsack,knapsackValue] = fillKnapsack(ratioList, maxKnapsackWeight)
   for counter = 1:len
     if (isFeasible(currentKnapsackWeight,maxKnapsackWeight,ratioList(counter,2)))
       knapsack = cat(2,ratioList(counter));
-      knapsackValue += ratioList(counter,3);
       currentKnapsackWeight += ratioList(counter,2);
-      counter++;
     endif
   end
   return;
