@@ -1,3 +1,5 @@
+%Can be optimised further by subtracting n/2 when k > n/2. For the purpose of analysing the most expensive calculation, k=n/2 has been taken, hence the aforementioned optimisation has not been made.
+
 function [passes] = bottomUpDynamic(n, k)
   n++; k++;
   [lookupTable,passes] = tableGen(n,k);
