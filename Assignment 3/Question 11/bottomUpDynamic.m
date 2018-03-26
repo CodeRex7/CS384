@@ -3,12 +3,16 @@
 function [passes] = bottomUpDynamic(n, k)
   n++; k++;
   [lookupTable,passes] = tableGen(n,k);
-  value = lookupTable(n-1,k-1)+lookupTable(n-1,k);
+  if (n>2) && (k!=1)
+    value = lookupTable(n-1,k-1)+lookupTable(n-1,k);
+  else
+    value = lookupTable(n-1,k);
+  endif
   return;
 end
 
 function [lookupTable,passes] = tableGen(n,k)
-  passes = 0;
+  passes = 1;
   lookupTable = zeros(n-1,k);
   lookupTable(1,1) = lookupTable(2,2) = lookupTable(2,1) = lookupTable(3,3) = lookupTable(3,1) = 1;
   lookupTable(3,2) = 2;
