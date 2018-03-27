@@ -1,6 +1,6 @@
-botup = recur = recsu = zeros(1,50);
+botup = recur = recsu = zeros(1,10);
 
-for i=1:50
+for i=1:10
   botup(i) += bottomUpDynamic(i,floor(i/2));
   recur(i) += binomialRecursive(i,floor(i/2));
   recsu(i) += binomialRecursiveSubtract(i,floor(i/2));
