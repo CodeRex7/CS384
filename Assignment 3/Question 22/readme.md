@@ -1,7 +1,7 @@
 # Longest Common Subsequence
 
 The longest common subsequence problem is given two sequences, A and B, find the longest sequence that is a subsequence of both of them. This can be done by an O(nm) dynamic programming algorithm. The basic algorithm requires O(nm) space to find the subsequence. This can be prohibitive if n and m are large (note that space is a bigger constraint than time). 
-1.Implement an O(nm) algorithm for finding the longest common subsequence of a pair of sequences. Your algorithm should identify the longest common subseqence (and not just give its length). Your algorithm may use O(nm) space.
+1.Implement an O(nm) algorithm for finding the longest common subsequence of a pair of sequences. Your algorithm should identify the longest common subsequence (and not just give its length). Your algorithm may use O(nm) space.
 2.Implement an O(nm) time, O(n+m) space algorithm that finds the length of the longest common subsequence
 Test Input Sets
 Test your program on the following sets of input data.
