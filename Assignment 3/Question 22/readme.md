@@ -14,8 +14,7 @@ Output:	7 (ATCGCAC)
 Input Set 2
 String1:	AACGTTCOGMA
 String2:	GGATACCASAT
-Output:	errors in String1 (aacgttcOgMa)
-	error in String 2 (ggataccaSat)
+Output:	5 (AACCA)
 
 Input Set 3
 String1:	AAAATTTT
@@ -25,7 +24,7 @@ Output:	4 (AAAT)
 Input Set 4
 String1:	TAGTAGTAGTAGTAGTAG
 String2:	CATCATCATCATCA
-Output:	8 (ATATATAT)  or  8 (CACACACA)
+Output:	8 (ATATATAT)  or  8 (TATATATATA)
 
 Input Set 5 (extra credit)
 Use your program to determine which of the following DNA sequences are most similar.  This input set is to simulate a real genetic experiment.  In a real experiment there could be many species, each DNA sequence thousands of characters long.  
