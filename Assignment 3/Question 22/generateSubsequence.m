@@ -33,6 +33,8 @@ function [subsequence] = generateSubsequence(subsequenceTable,x)
       if subsequenceTable(i,j) == 1
         subsequence = [x(i),subsequence];
         i--;
+      else
+        i--;
       endif
     endif
   endwhile
