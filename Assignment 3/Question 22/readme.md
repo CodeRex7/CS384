@@ -23,7 +23,7 @@ Output:	4 (AAAT)
 
 Input Set 4
 String1:	TAGTAGTAGTAGTAGTAG
-String2:	CATCATCATCATCA
+String2:	CATCATCATCATCAT
 Output:	8 (ATATATAT)  or  8 (TATATATATA)
 
 Input Set 5 (extra credit)
